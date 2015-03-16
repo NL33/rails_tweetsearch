@@ -1,7 +1,53 @@
+$ rails new tweetsearch
+
+$ cd tweetsearch
+
 $ rails generate migration create_keywords
 
 set up initial files
 
+$ bundle install
+
 $ bundle exec rake db:create //create sql database
 
 $ bundle exec rake db:migrate
+
+*Bootstrap
+stylesheets/application.css: change to css.scss (for sass).  Add:
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "styling.scss"; [or other preferred file]
+
+javascripts/application.js: Add:
+//= require bootstrap-sprockets
+
+*views/application.html.erb:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tweetsearch</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+
+  <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+  <%= yield %>
+</div>
+
+</body>
+</html>
+

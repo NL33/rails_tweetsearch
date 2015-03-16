@@ -1,5 +1,13 @@
 <h2> Listing keywords </h2>
 
-<h4> word </h4>
+<% if @keywords %>
+	 <%= render @keywords %>
+	 <%# Whenever render is passed a collection of objects, it will render a partial with the same name as the class of the objects in the collection. So this is equivalent to
+	    <% @tweets.each do |tweet| %>
+	       <%#= render 'tweet' %>
+	    <%# end %> 
+<% end %> 
+
+</br>
 
 <%= link_to "New Keyword", new_keyword_path, :class => "btn btn-default", id: "new_keyword"  %></br>
