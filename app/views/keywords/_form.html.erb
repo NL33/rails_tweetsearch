@@ -1,0 +1,13 @@
+<%= render('layouts/errors', :object => @keyword) %>
+
+<%= form_for [@keyword] do |f| %>
+  <div class="form-group">
+    <%= f.label :word %>
+    <%= f.text_field :word %>
+  </div>
+ 
+ </br>
+  
+  <div class="form-group"><%= f.submit "Submit", :class => 'btn btn-info' %></div>
+
+<% end %>
