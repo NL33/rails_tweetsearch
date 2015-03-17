@@ -1,4 +1,4 @@
-$ rails new tweetsearch
+$ rails new tweetsearch -d postgresql –T
 
 $ cd tweetsearch
 
