@@ -16,6 +16,7 @@ gem 'bcrypt'
 gem 'devise'
 gem 'textacular'
 gem 'paperclip'
+gem 'twitter', '~> 5.14.0'
 
 
 group :development do
@@ -26,9 +27,11 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'pry'
   gem 'database_cleaner'
   gem 'letter_opener'
+  gem 'dotenv-rails'
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :test do

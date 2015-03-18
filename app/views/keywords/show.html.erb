@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Word:</strong>
+	<%= @keyword.word %>
+</p>
+
+<h2>Latest Tweets</h2>
+<ul>
+	<% @keyword.word.grab_tweets.each do |tweet| %>
+		<li> <%= tweet %> </li>
+	<% end %>
+</ul>
+
+<%= link_to 'Back', keywords_path %>
