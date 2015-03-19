@@ -7,8 +7,8 @@
 
 <h2>Latest Tweets</h2>
 <ul>
-	<% @keyword.word.grab_tweets.each do |tweet| %>
-		<li> <%= tweet %> </li>
+	<% @keyword.tweets.each do |tweet| %>
+		<li> <%tweet.user_screen_name %> : <%= tweet.text %> </li>
 	<% end %>
 </ul>
 
