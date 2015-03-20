@@ -20,8 +20,7 @@ class KeywordsController < ApplicationController
   end
 
   def show
-    @keyword = Keyword.find(params[:id]) 
-    render('keywords/show.html.erb')
+    #@keyword.grab_twitts  //runs this method when show actionloads
   end
 
   def edit 
@@ -45,9 +44,14 @@ class KeywordsController < ApplicationController
     redirect_to keywords_path
  end
 
- private
+private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_keyword
+      @keyword = Keyword.find(params[:id])
+    end
 
+    # Never trust parameters from the scary internet, only allow the white list through.
     def keyword_params
-      params.require(:keyword).permit(:word)
+      params.require(:keyword).permit(:word,:image)
     end
 end
