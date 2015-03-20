@@ -1,6 +1,6 @@
 class Keyword < ActiveRecord::Base
 	has_many :tweets
-	def grab_twitts
+	def grab_tweets
 	     client = Twitter::REST::Client.new do |config|
 	     config.consumer_key = ENV["TWITTER_CONSUMER_KEY"] #real app has .env file with the actual key
 	     config.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
@@ -8,7 +8,7 @@ class Keyword < ActiveRecord::Base
 	     config.oauth_token_secret = ENV["TWITTER_OAUTH_SECRET"]
 	    end
 
-	    client.search(self.word, result_type: "recent").take(10).collect do |tweet| #for each, create a new Tweet object:
+	    client.search(self.word, result_type: "recent").take(100).collect do |tweet| #for each, create a new Tweet object:
 	    	new_tweet = Tweet.new
 	    	 new_tweet.tweet_id = tweet.id.to_s #this value and the others are what we get back from Twitter
         	 new_tweet.tweet_created_at = tweet.created_at

@@ -20,7 +20,7 @@ class KeywordsController < ApplicationController
   end
 
   def show
-    #@keyword.grab_twitts  //runs this method when show actionloads
+    #@keyword.grab_twitts  //runs this method when show action loads
   end
 
   def edit 
