@@ -1,0 +1,1 @@
+Rack::Timeout.timeout = 10  #this kills process if taking more than 10 seconds 

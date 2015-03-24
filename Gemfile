@@ -17,6 +17,9 @@ gem 'devise'
 gem 'textacular'
 gem 'paperclip'
 gem 'twitter', '~> 5.14.0'
+gem 'newrelic_rpm'
+gem 'unicorn'
+gem 'rack-timeout'
 
 
 group :development do

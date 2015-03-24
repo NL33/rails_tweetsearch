@@ -12,6 +12,7 @@ class KeywordsController < ApplicationController
   def create
     @keyword = Keyword.new(keyword_params)  
     if @keyword.save
+      @keyword.grab_tweets
       flash[:notice] = "Keyword created."
       redirect_to keywords_path 
     else
